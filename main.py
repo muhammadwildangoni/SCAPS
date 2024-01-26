@@ -5,8 +5,8 @@ from torchvision import datasets, transforms, models
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
-model = torch.load("F:\Jupyter Notebook Python\deep_learning-master\deep_learning-master\Skin Cancer Classification\content\output_skin_cancer\model_best.pth", map_location="cpu").to(device)
-metadata = torch.load("F:\Jupyter Notebook Python\deep_learning-master\deep_learning-master\Skin Cancer Classification\content\output_skin_cancer\configs.pth")
+model = torch.load("model_best.pth", map_location="cpu").to(device)
+metadata = torch.load("configs.pth")
 model.eval()
 
 def predict(image_path):
